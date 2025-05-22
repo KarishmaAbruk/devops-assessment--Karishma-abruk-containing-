@@ -52,7 +52,7 @@ variable "instance_type" {
 variable "ami_id" {
   description = "AMI ID for Amazon Linux 2"
   type        = string
-  default     = "ami-0c02fb55956c7d316" # This is for us-east-1, check region-specific AMI
+  default     = "ami-0e58b56aa4d64231b" # This is for us-east-1, check region-specific AMI
 }
 
 variable "key_name" {
