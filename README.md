@@ -1,8 +1,8 @@
 # devops-assessment--Karishma-abruk-containing-
 
-# Terraform Cloud Module for Instance and VPC creation and web application deployment
+## Terraform Cloud Module for Instance and VPC creation and web application deployment
 
-# Pipeline Requirements
+### Pipeline Requirements
 Create a CI/CD pipeline that:
 
 Triggers automatically when code is pushed to GitHub
@@ -13,7 +13,7 @@ Verifies deployment success
 Provides clear feedback on pipeline status
 
 
-# AWS Infrastructure to create
+### AWS Infrastructure to create
 Create ssh key for instance to login from our machine in AWS console
 Create VPC
 Create Subnets (Public and Private)
