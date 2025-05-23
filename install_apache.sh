@@ -17,6 +17,8 @@ sudo systemctl enable httpd
 echo "Starting Apache service..."
 sudo systemctl start httpd
 
+echo "<html><h1>Hello World from EC2 instance $INSTANCE_ID</h1></html>" > /var/www/html/index.html
+
 echo "Apache installation completed successfully."
 
 
