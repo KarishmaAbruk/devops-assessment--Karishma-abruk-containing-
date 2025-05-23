@@ -19,6 +19,12 @@ pipeline {
             steps {
                 sh 'terraform init'
             }
+        } 
+        stage('Terraform Format') { 
+            steps { 
+                sh 'terraform fmt -check || exit 0' 
+            } 
+
         }
 
         stage('Validate Terraform Code') {
