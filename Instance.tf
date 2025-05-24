@@ -1,5 +1,5 @@
 resource "aws_instance" "web" {
-  ami                         = var.ami_id" #ami-0e58b56aa4d64231b Amazon Linux 2 AMI free tier
+  ami                         = var.ami_id #ami-0e58b56aa4d64231b Amazon Linux 2 AMI free tier
   instance_type               = var.instance_type
   key_name                    =  "Jenkindemo.pem"
   subnet_id                   = aws_subnet.public_subnet.id
