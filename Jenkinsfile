@@ -19,21 +19,22 @@ pipeline {
             steps {
                 sh 'terraform init'
             }
-        } 
-        stage('Terraform Format') { 
-            steps { 
-                sh 'terraform fmt -check || exit 0' 
-            } 
+        }
+
+        stage('Terraform Format') {
+            steps {
+                sh 'terraform fmt -check || exit 0'
+            }
         }
 
         stage('Validate Terraform Code') {
             steps {
-               script {
-                   def start = System.currentTimeMillis()
-                   sh 'terraform validate -no-color'
-                   def duration = (System.currentTimeMillis() - start) / 1000
-                   echo "Validation took ${duration} seconds"
-        
+                script {
+                    def start = System.currentTimeMillis()
+                    sh 'terraform validate -no-color'
+                    def duration = (System.currentTimeMillis() - start) / 1000
+                    echo "Validation took ${duration} seconds"
+                }
             }
         }
 
@@ -60,4 +61,3 @@ pipeline {
         }
     }
 }
-}    
