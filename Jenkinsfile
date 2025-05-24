@@ -27,12 +27,12 @@ pipeline {
         }
 
         stage('Validate Terraform Code') {
-    steps {
-        script {
-            def start = System.currentTimeMillis()
-            sh 'terraform validate -no-color'
-            def duration = (System.currentTimeMillis() - start) / 1000
-            echo "Validation took ${duration} seconds"
+            steps {
+               script {
+                   def start = System.currentTimeMillis()
+                   sh 'terraform validate -no-color'
+                   def duration = (System.currentTimeMillis() - start) / 1000
+                   echo "Validation took ${duration} seconds"
         
             }
         }
