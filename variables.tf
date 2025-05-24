@@ -55,7 +55,3 @@ variable "ami_id" {
   default     = "ami-0e58b56aa4d64231b" # This is for us-east-1, check region-specific AMI
 }
 
-variable "key_name" {
-  description = "SSH key pair name for EC2 instance access"
-  type        = string
-}
