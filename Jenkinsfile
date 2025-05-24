@@ -24,12 +24,16 @@ pipeline {
             steps { 
                 sh 'terraform fmt -check || exit 0' 
             } 
-
         }
 
         stage('Validate Terraform Code') {
-            steps {
-                sh 'terraform validate'
+    steps {
+        script {
+            def start = System.currentTimeMillis()
+            sh 'terraform validate -no-color'
+            def duration = (System.currentTimeMillis() - start) / 1000
+            echo "Validation took ${duration} seconds"
+        
             }
         }
 
