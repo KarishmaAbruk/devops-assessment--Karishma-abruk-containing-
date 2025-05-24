@@ -8,6 +8,18 @@ pipeline {
         AWS_DEFAULT_REGION = 'us-east-1'  // Change to your desired region
     }
 
+    options {
+        timeout(time: 15, unit: 'MINUTES') // Prevents long-running jobs
+    }
+
+    stages {
+        stage('Clean Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
+
+
     stages {
         stage('Clone Terraform Repo') {
             steps {
