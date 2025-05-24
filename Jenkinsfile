@@ -14,19 +14,16 @@ pipeline {
                 git url: 'https://github.com/KarishmaAbruk/devops-assessment--Karishma-abruk-containing-.git', branch: 'main'
             }
         }
-
         stage('Initialize Terraform') {
             steps {
                 sh 'terraform init'
             }
         }
-
         stage('Terraform Format') {
             steps {
                 sh 'terraform fmt -check || exit 0'
             }
         }
-
         stage('Validate Terraform Code') {
             steps {
                 script {
@@ -37,13 +34,11 @@ pipeline {
                 }
             }
         }
-
         stage('Plan Infrastructure') {
             steps {
                 sh 'terraform plan -out=tfplan'
             }
         }
-
         stage('Apply Infrastructure') {
             steps {
                 input message: 'Apply Terraform plan?', ok: 'Apply'
@@ -51,7 +46,6 @@ pipeline {
             }
         }
     }
-
     post {
         failure {
             echo "Terraform apply failed"
